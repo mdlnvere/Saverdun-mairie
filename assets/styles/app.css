@@ -1,3 +1,19 @@
-body {
-    background-color: skyblue;
+li {
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+nav li, li{
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+/**************** *WEATHER** **************************************/
+.weather_icon{
+    width: 100px;
 }

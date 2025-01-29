@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Saverdun - Accueil{% endblock %}
+
+{% block body %}
+<style>
+   
+</style>
+
+<div class="example-wrapper">
+    <h1>Saverdun</h1>
+    <h2>L'audacieux</h2>
+
+    
+</div>
+
+<div>
+    <li>
+        <ul><a href="#">Accès rapide</a></ul>
+        <ul><a href="#">Accès rapide</a></ul>
+        <ul><a href="#">Accès rapide</a></ul>
+        <ul><a href="#">Accès rapide</a></ul>
+        <ul><a href="#">Nouveaux arrivants ?</a></ul>
+    </li>
+    
+</div>
+
+<div>
+    <h4>INFO TRAFFIC</4>
+</div>
+<div>
+    <h4>A LA UNE</4>
+</div>
+<div>
+    <h4>METEO</4>
+    <p>temperature actuelle : {{datas.current.temperature_2m}} °C</p>
+    <p>Ressenti: {{datas.current.apparent_temperature}} °C</p>
+    <p>Precipitation : {{datas.current.precipitation}} mm</p>
+    <p>Vent : {{datas.current.wind_speed_10m}} km/h</p>
+
+    <div>Temps actuel : {{weather.alt}}</div>
+    <img class="weather_icon" src="{{ asset(weather.icon) }}" alt="Icone du temps actuel">
+
+    
+</div>
+
+{% endblock %}
