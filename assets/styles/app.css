@@ -1,3 +1,7 @@
+html{
+    margin: 0%;
+    padding: 0%;
+}
 li {
     list-style: none;
 }
@@ -12,8 +16,19 @@ nav li, li{
 }
 
 
+/***************************** FOOTER *************************************/
+.footer{
+    background-color: black;
+    color: white;
+}
+
 
 /**************** *WEATHER** **************************************/
+.weather{
+    background-color: rgb(212, 224, 234);
+}
+
 .weather_icon{
     width: 100px;
 }
+

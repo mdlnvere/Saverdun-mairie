@@ -11,8 +11,6 @@ final class HomeController extends AbstractController
 {
     public $weather;
 
-   
-
 
     #[Route('/home', name: 'app_home')]
     public function index(WeatherApiService $apiService): Response
@@ -37,7 +35,7 @@ final class HomeController extends AbstractController
                 switch($code){
                     case "0" : $weather = [
                         "alt" => "Ciel bleu",
-                        "icon" => "media/cloudy.png" 
+                        "icon" => "media/sun.png" 
                       ];;
                     break;
                     case "1" :
@@ -57,13 +55,13 @@ final class HomeController extends AbstractController
                     case str_starts_with($code, "5") :
                         $weather = [
                             "alt" => "Bruine",
-                            "icon" => "media/cloudy.png" 
+                            "icon" => "media/drizzle.png" 
                           ];
                         break;
                     case str_starts_with($code, "6"): 
                         $weather = [
                             "alt" => "Pluie",
-                            "icon" => "media/cloudy.png" 
+                            "icon" => "media/light-rain.png" 
                           ];
                         break;
                     case "71":
@@ -71,13 +69,13 @@ final class HomeController extends AbstractController
                     case "75": 
                         $weather= [
                             "alt" => "Neige",
-                            "icon" => "media/cloudy.png" 
+                            "icon" => "media/snowy.png" 
                           ];
                         break;
                     case "77":
                         $weather = [
                             "alt" => "Grêle",
-                            "icon" => "media/cloudy.png" 
+                            "icon" => "media/hail.png" 
                           ];
                         break;
                     case str_starts_with($code, "8") :
@@ -134,13 +132,13 @@ final class HomeController extends AbstractController
                     case "77":
                         $weather = [
                             "alt" => "Grêle",
-                            "icon" => "media/cloudy.png" 
+                            "icon" => "media/hail.png" 
                           ];
                         break;
                     case str_starts_with($code, "8") :
                         $weather = [
                             "alt" => "Averse",
-                            "icon" => "media/cloudy.png" 
+                            "icon" => "media/light-rain.png" 
                           ];
                         break;
                     case str_starts_with($code, "9") : 
@@ -156,7 +154,6 @@ final class HomeController extends AbstractController
             return $weather;
         }
 
-     //dd(getWeatherIcon($apiService)) ;  
        // dd($apiService->getFranceData());
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',

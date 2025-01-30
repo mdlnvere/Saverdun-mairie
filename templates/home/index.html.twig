@@ -25,23 +25,58 @@
     
 </div>
 
-<div>
-    <h4>INFO TRAFFIC</4>
-</div>
-<div>
-    <h4>A LA UNE</4>
-</div>
-<div>
-    <h4>METEO</4>
-    <p>temperature actuelle : {{datas.current.temperature_2m}} °C</p>
-    <p>Ressenti: {{datas.current.apparent_temperature}} °C</p>
-    <p>Precipitation : {{datas.current.precipitation}} mm</p>
-    <p>Vent : {{datas.current.wind_speed_10m}} km/h</p>
+<section>
+    <div>
+        <h4>INFO TRAFFIC</4>
+        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
+         deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non 
+         provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum
+          fuga. Et harum quidem rerum facilis est et expedita distinctio. </p>
+    </div>
+    <div>
+        <h4>A LA UNE</4>
+         <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
+         deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non 
+         provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum
+          fuga. Et harum quidem rerum facilis est et expedita distinctio. </p>
+    </div>
+    <div class="weather">
+        <h4>METEO</4>
+        <p>temperature actuelle : {{datas.current.temperature_2m}} °C</p>
+        <p>Ressenti: {{datas.current.apparent_temperature}} °C</p>
+        <p>Precipitation : {{datas.current.precipitation}} mm</p>
+        <p>Vent : {{datas.current.wind_speed_10m}} km/h</p>
 
-    <div>Temps actuel : {{weather.alt}}</div>
-    <img class="weather_icon" src="{{ asset(weather.icon) }}" alt="Icone du temps actuel">
+        <div>Temps actuel : {{weather.alt}}</div>
+        <img class="weather_icon" src="{{ asset(weather.icon) }}" alt="Icone du temps actuel">
 
-    
-</div>
+        
+    </div>
+</section>
+
+<section>
+    <div>
+        <h4>AGENDA</4>
+         <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
+         deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non 
+         provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum
+          fuga. Et harum quidem rerum facilis est et expedita distinctio. </p>
+    </div>
+</section>
+
+<section>
+    <div>
+        <h4>APP Saverdun</4>
+    </div>
+    <div>
+        <h4>L'univers ariégeois</4>
+        <p>Liste des différents sites de la commune</p>
+    </div>
+    <div>
+        <h4>Maps </4>
+        <p>Carte interactive </p>
+        <a href="#">Lien vers annuaire</a>
+    </div>
+</section>
 
 {% endblock %}
