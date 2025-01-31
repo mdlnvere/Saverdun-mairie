@@ -74,6 +74,18 @@
          deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non 
          provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum
           fuga. Et harum quidem rerum facilis est et expedita distinctio. </p>
+
+        <div >
+        {% for event in events %}
+            <div class='border'>
+                <p>{{event.name}}</p>
+                <p>{{event.date | date}}</p>
+                <p>{{event.description}}</p>
+                <p>{{event.place}}</p>
+                <p>{{event.organizer}}</p>
+            </div>
+        {% endfor %}
+        </div>
         <a href="#">Lien pour la demande de mise en ligne d'un évènement</a>
     </div>
 </section>

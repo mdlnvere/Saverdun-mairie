@@ -3,12 +3,17 @@
 namespace App\Controller;
 
 use App\Entity\Post;
+use App\Repository\EventRepository;
 use App\Repository\PostRepository;
 use App\Service\WeatherApiService;
+use DateTime;
 use Doctrine\ORM\EntityManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\Validator\Constraints\Date;
+
+use function Symfony\Component\Clock\now;
 
 final class HomeController extends AbstractController
 {
@@ -16,7 +21,8 @@ final class HomeController extends AbstractController
 
 
     #[Route('/home', name: 'app_home')]
-    public function index(WeatherApiService $apiService, PostController $postController, PostRepository $postRepository): Response
+    public function index(WeatherApiService $apiService, PostController $postController, 
+    PostRepository $postRepository, EventRepository $eventRepository): Response
     {
          function getWeatherIcon(WeatherApiService $apiService):string
         {
@@ -163,12 +169,19 @@ final class HomeController extends AbstractController
          return $posts = array_slice($posts,0, 3);
         }
 
+        function getFutureEvents(EventRepository $eventRepository): array
+        {
+          $events = $eventRepository->findByDate(date('Y-m-d'));
+          return array_slice($events, 0, 3);
+        }
+
        // dd($apiService->getFranceData());
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
             'datas' => $apiService->getFranceData(),
             'weather' => setWeatherIcon(getWeatherIcon($apiService),isDayOrNight($apiService)),
-            'posts' => getLastPosts($postRepository)
+            'posts' => getLastPosts($postRepository),
+            'events' => getFutureEvents($eventRepository)
         ]);
     }
 }
