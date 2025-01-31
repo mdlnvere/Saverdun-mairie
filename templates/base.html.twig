@@ -13,13 +13,15 @@
     </head>
     <header>
         <nav>
-            <li>
-                <ul><a href=#>Accueil</a></ul>
-                <ul><a href=#>Démarches</a></ul>
-                <ul><a href=#>Ma ville</a></ul>
-                <ul><a href=#>Vivre à Saverdun</a></ul>
-                <ul><a href=#>Nouveaux arrivants</a></ul>
-            </li>
+            <ul>
+                <li class="accueil"><a href=#><img class='logo' src="{{ asset('media/logo.png') }}" alt="Accueil"></a></li>
+                <div class="links">
+                    <li><a href=#>Démarches</a></li>
+                    <li><a href=#>Ma ville</a></li>
+                    <li><a href=#>Vivre à Saverdun</a></li>
+                    <li><a href=#>Nouveaux arrivants</a></li>
+                </div> 
+            </ul>
         </nav>
     </header>
     
@@ -28,6 +30,34 @@
     </body>
 
     <footer class="footer">
-        Footer 
+        <section>
+            <h5>Nous rencontrer</h6>
+            <ul>
+                <li>
+                    <p>Horaire</p>
+                    <p>Lundi au Vendredi : 8h30 - 12h15 / 13h30 - 17h15 <br></p>
+                    <p>Samedi: 9h00 - 12h00 (état-civil)</p>
+                </li>
+                <li>
+                    <p>1 place du Souverni-Français <br>
+                        09700 Saverdun
+                    </p>
+                </li>
+            </li>
+        </section>
+         <section>
+            <h5>Nous contacter</h6>
+            <ul>
+                <li>
+                    <p>Téléphone </p>
+                    <p>0561603031</p>
+                </li>
+                <li>
+                    <p>Réseaux sociaux</p>
+                    <p>0561603031</p>
+                </li>
+
+            </ul>
+        </section>
     </footer>
 </html>

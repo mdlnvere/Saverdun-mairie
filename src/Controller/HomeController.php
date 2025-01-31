@@ -2,7 +2,10 @@
 
 namespace App\Controller;
 
+use App\Entity\Post;
+use App\Repository\PostRepository;
 use App\Service\WeatherApiService;
+use Doctrine\ORM\EntityManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
@@ -13,7 +16,7 @@ final class HomeController extends AbstractController
 
 
     #[Route('/home', name: 'app_home')]
-    public function index(WeatherApiService $apiService): Response
+    public function index(WeatherApiService $apiService, PostController $postController, PostRepository $postRepository): Response
     {
          function getWeatherIcon(WeatherApiService $apiService):string
         {
@@ -154,11 +157,18 @@ final class HomeController extends AbstractController
             return $weather;
         }
 
+        function getLastPosts(PostRepository $postRepository): array
+        {
+          $posts = array_reverse($postRepository->findAll());
+         return $posts = array_slice($posts,0, 3);
+        }
+
        // dd($apiService->getFranceData());
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
             'datas' => $apiService->getFranceData(),
-            'weather' => setWeatherIcon(getWeatherIcon($apiService),isDayOrNight($apiService))
+            'weather' => setWeatherIcon(getWeatherIcon($apiService),isDayOrNight($apiService)),
+            'posts' => getLastPosts($postRepository)
         ]);
     }
 }
