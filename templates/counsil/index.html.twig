@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Counsil index{% endblock %}
+
+{% block body %}
+    <h1>Counsil index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Date</th>
+                <th>Attendee</th>
+                <th>Subject</th>
+                <th>Attachment</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for counsil in counsils %}
+            <tr>
+                <td>{{ counsil.id }}</td>
+                <td>{{ counsil.date }}</td>
+                <td>{{ counsil.attendee }}</td>
+                <td>{{ counsil.subject }}</td>
+                <td>{{ counsil.attachment }}</td>
+                <td>
+                    <a href="{{ path('app_counsil_show', {'id': counsil.id}) }}">show</a>
+                    <a href="{{ path('app_counsil_edit', {'id': counsil.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_counsil_new') }}">Create new</a>
+{% endblock %}

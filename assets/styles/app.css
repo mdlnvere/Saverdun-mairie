@@ -522,3 +522,11 @@ button:hover:before {
   letter-spacing: 0.8px;
   color: #fcfdfe;
 }
+
+.counsil{
+  background-color: rgb(228, 94, 94);
+  border-radius: 6px;
+  width: 10%;
+  color: #fcfdfe;
+  font-size: 1em;
+}

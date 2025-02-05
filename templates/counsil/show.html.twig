@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Counsil{% endblock %}
+
+{% block body %}
+    <h1>Counsil</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ counsil.id }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ counsil.date }}</td>
+            </tr>
+            <tr>
+                <th>Attendee</th>
+                <td>{{ counsil.attendee }}</td>
+            </tr>
+            <tr>
+                <th>Subject</th>
+                <td>{{ counsil.subject }}</td>
+            </tr>
+            <tr>
+                <th>Attachment</th>
+                <td>{{ counsil.attachment }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_counsil_index') }}">back to list</a>
+
+    <a href="{{ path('app_counsil_edit', {'id': counsil.id}) }}">edit</a>
+
+    {{ include('counsil/_delete_form.html.twig') }}
+{% endblock %}

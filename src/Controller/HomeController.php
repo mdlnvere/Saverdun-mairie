@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Post;
+use App\Repository\CounsilRepository;
 use App\Repository\EventRepository;
 use App\Repository\PostRepository;
 use App\Service\WeatherApiService;
@@ -21,7 +22,7 @@ final class HomeController extends AbstractController
 
 
     #[Route('/home', name: 'app_home')]
-    public function index(WeatherApiService $apiService, PostController $postController, 
+    public function index(WeatherApiService $apiService, CounsilRepository $counsilRepository, 
     PostRepository $postRepository, EventRepository $eventRepository): Response
     {
          function getWeatherIcon(WeatherApiService $apiService):string
@@ -175,6 +176,11 @@ final class HomeController extends AbstractController
           return array_slice($events, 0, 3);
         }
 
+        function getLastCounsil(CounsilRepository $counsilRepository)
+        {
+          return $counsil = $counsilRepository->findLastOne();
+        }
+
        // dd($apiService->getFranceData());
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
@@ -182,7 +188,8 @@ final class HomeController extends AbstractController
             'weather' => setWeatherIcon(getWeatherIcon($apiService),isDayOrNight($apiService)),
             'posts' => getLastPosts($postRepository),
             'postsMini' => array_slice(getLastPosts($postRepository), 1,4),
-            'events' => getFutureEvents($eventRepository)
+            'events' => getFutureEvents($eventRepository),
+            'counsil' => getLastCounsil($counsilRepository)
         ]);
     }
 }
