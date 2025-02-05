@@ -13,9 +13,10 @@ class EventType extends AbstractType
     {
         $builder
             ->add('name')
-            ->add('date', null, [
+            ->add('dateStart', null, [
                 'widget' => 'single_text',
             ])
+            ->add('dateEnd')
             ->add('description')
             ->add('organizer')
             ->add('place')

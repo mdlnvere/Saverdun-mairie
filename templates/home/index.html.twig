@@ -8,101 +8,173 @@
 </style>
 
 <div class="wrapper">
- <header>
-       
+    <header>
         <h1 class='title'>Saverdun, village audacieux</h1>
-    </header>
-    <div class='quick_access'>
-        <li>
-            <ul><a href="#">Accès rapide</a></ul>
-            <ul><a href="#">Accès rapide</a></ul>
-            <ul><a href="#">Accès rapide</a></ul>
-            <ul><a href="#">Accès rapide</a></ul>
-            <ul><a href="#">Nouveaux arrivants ?</a></ul>
-        </li>
+    </header>    
+</div>
+<div class='quick_access'>
+        <ul>
+            <li><img class='logo m-5' src='{{ asset('media/document.svg') }}'><a href="#">Démarches et Etat civil</a></li>
+            <li><img class='icon m-5' src='{{ asset('media/family.svg') }}'><a href="#">Sortir à Saverdun</a></li>
+            <li><img class='icon m-5' src='{{ asset('media/home.svg') }}'><a href="#">S'installer à Saverdun</a></li>
+        </ul>
         
-    </div>
+</div>
+
+<div class="body">
+    <section class="news m-5">
+        <div>
+            <h4 class='m-0' >A LA UNE</h4>
+            <p>Les dernières actualités de Saverdun, rédigées par nos soins. Pour que vous, saverdunois, 
+            soyez toujours au courant de ce qu'il se passe chez vous! </p>
+            <div class="row">
+                <div class="w-80 pc-2 posts">
+                    <p class="under_title">{{posts.0.title}}</p>
+                    <p class="note">- {{posts.0.date |date("d/m/Y")}}</p>
+                        {% if posts.0.url %}
+                    <img class="post_pic" src="{{ asset(posts.0.url) }}" alt="image liée" >
+                    {% endif %}
+                    
+                    <p>{{ posts.0.description}}</p>
+
+                    <button class="button">En savoir plus </button>
+                </div>     
+                <div class='column mc-2 flex between'>
+                {% for post in postsMini %}
+                    <div class="  posts p-5 ">
+                        <div class="column">
+                            <p class="under_title2">{{post.title}}</p>
+                            <p class="note2">- {{post.date |date("d/m/Y")}}</p>
+                        </div>    
+                        <p>{{post.description | slice (0, 100)}}...</p>
+                        <button class="p-0">En savoir plus </button>
     
-</div>
-
-
-
-<section>
-    <div>
-        <h4>A LA UNE</4>
-         <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
-         deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non 
-         provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum
-          fuga. Et harum quidem rerum facilis est et expedita distinctio. </p>
-        <div >
-        {% for post in posts %}
-            <div class='border'>
-                <p>{{post.title}}</p>
-                <p>{{post.date | date}}</p>
-                <p>{{post.description}}</p>
+                    </div>
+                {% endfor %}
+                </div>
             </div>
-        {% endfor %}
-        </div>
-         
-    </div>
-    <div class="cardContainer">
-  <div class="card">
-    <p class="city">SAVERDUN</p>
-    <p class="weather">{{weather.alt}}</p>
-      <img class="weather_icon" src="{{ asset(weather.icon) }}" alt="Icone du temps actuel">
-    <p class="temp">{{datas.current.temperature_2m}} °</p>
-    <p class="minHeading">Ressenti {{datas.current.apparent_temperature}} °</p>
+            <button>Voir toutes les actualités </button>
+        </div>    
+        <div class="cardContainer">
+            <div class="card">
+                <p class="city">SAVERDUN</p>
+                <p class="weather">{{weather.alt}}</p>
+                <img class="weather_icon" src="{{ asset(weather.icon) }}" alt="Icone du temps actuel">
+                <p class="temp">{{datas.current.temperature_2m}} °</p>
+                <p class="minHeading">Ressenti {{datas.current.apparent_temperature}} °</p>
 
-    <div class="minmaxContainer">
-      <div class="min">
-        <p class="minHeading">Précipitation</p>
-        <p class="minTemp">{{datas.current.precipitation}} mm</p>
-      </div>
-      <div class="max">
-        <p class="maxHeading">Vent</p>
-        <p class="maxTemp">{{datas.current.wind_speed_10m}} km/h</p>
-      </div>
-    </div>
-  </div>
-</div>
-</section>
-
-<section>
-    <div>
-        <h4>AGENDA</4>
-         <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
-         deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non 
-         provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum
-          fuga. Et harum quidem rerum facilis est et expedita distinctio. </p>
-
-        <div >
-        {% for event in events %}
-            <div class='border'>
-                <p>{{event.name}}</p>
-                <p>{{event.date | date}}</p>
-                <p>{{event.description}}</p>
-                <p>{{event.place}}</p>
-                <p>{{event.organizer}}</p>
+                <div class="minmaxContainer">
+                <div class="min">
+                    <p class="minHeading">Précipitation</p>
+                    <p class="minTemp">{{datas.current.precipitation}} mm</p>
+                </div>
+                <div class="max">
+                    <p class="maxHeading">Vent</p>
+                    <p class="maxTemp">{{datas.current.wind_speed_10m}} km/h</p>
+                </div>
             </div>
-        {% endfor %}
         </div>
-        <a href="#">Lien pour la demande de mise en ligne d'un évènement</a>
-    </div>
-</section>
+    </section>
 
-<section>
-    <div>
-        <h4>APP Saverdun</4>
-    </div>
-    <div>
-        <h4>L'univers ariégeois</4>
-        <p>Liste des différents sites de la commune</p>
-    </div>
-    <div>
-        <h4>Maps </4>
-        <p>Carte interactive </p>
-        <a href="#">Lien vers annuaire</a>
-    </div>
-</section>
+    <section class="news m-5">
+        <div>
+            <h4 class='m-0'>AGENDA</h4>
+            <p>Retrouvez ici tous les prochains évènements de la ville </p>
 
+            <div class="row mc-2 flex between" >
+            {% for event in events %}
+                <div  class="posts p-2 m-2 w-45">
+                    <div>
+                        <div class="row" >
+                            <div class='agenda flex row center'>
+                                <p>{{event.dateStart |date("d M y")}} </p>
+                            </div>
+                            {%if event.dateEnd%}
+                                <div class="agenda flew row center mc-2 ">
+                            
+                                    <p>{{event.dateEnd |date("d M y")}}</p>
+                                </div>
+                            {% endif %}
+                        </div>
+                        
+                        <p class="under_title2">{{event.name}}</p>
+                        <p>{{event.description | slice (0, 100)}} ...</p>
+                        <p class="note2 p-2">Lieu : {{event.place}}</p>
+                        <p class="note2 p-2">Organisé par : {{event.organizer}}</p>
+
+                        <button>En savoir plus </button>
+                    </div>
+                    
+                </div>
+            {% endfor %}
+            </div>
+            <div>
+                <p class='under_title2'>Vous organisez un évènement et souhaitez le partager sur notre site ? </p>
+                <p class="note">C'est par ici :</p>
+                <button>Demander la mise en ligne d'un évènement</button>
+            </div>
+            
+        </div>
+    </section>
+
+    <section>
+         <div>
+            <h4>EN DIRECT DE LA MAIRIE</h4>
+            <h5>La mairie vous informe</h5>
+            <p>App saverdun news </p>
+            <img src='' alt='QrCode4'>
+
+            
+            
+
+        </div>
+    </section>
+
+    <section>
+        <div class='special_sec'>
+            <div class='p-2'>
+                <h5 class='pc-5'>Le mot du maire</h5>
+                <p class='pc-5 mbt-2 desc' >Philippe Calléja, maire de Saverdun, a souhaité vous adresser un mot : </p>
+                <div class='flex row'>
+
+                    <img class='pc-5' style="width: 30%; object-fit: contain" src="{{ asset('media/calleja.jpg') }}"
+                    alt='Portrait officiel de Philippe Calléja, maire de Saverdun'>
+                    <div class='column'>
+                        <img class='quote' src='{{ asset('media/quote.svg')}}'>
+                        <h6 class='text_intro'>Chères Saverdunoises, chers Saverdunois,</h6>
+                        <p class='pc-5 text'>
+                            Saverdun est une commune dynamique, où il fait bon vivre. 
+                            Que ce soit par son cadre de vie, ses équipements, ses associations ou son tissu économique,
+                            notre village sait allier tradition et modernité. Ensemble, nous travaillons chaque jour 
+                            à améliorer la qualité de vie, à soutenir nos commerces locaux, à développer de
+                            nouveaux services et à renforcer les liens qui nous unissent.<br>
+                            Ce site est un espace pour vous, pour que vous puissiez y trouver toutes 
+                            les informations nécessaires sur la vie municipale, les événements à venir, 
+                            les démarches administratives, et plus encore. N’hésitez pas à y consulter les actualités,
+                            à participer aux concertations, et à nous faire part de vos suggestions. 
+                            Votre voix est essentielle pour faire de Saverdun une commune où chacun 
+                            se sent écouté et acteur du développement local.<br>
+                            Ensemble, construisons un avenir solidaire, responsable et prospère pour notre belle commune.
+                        </p>
+                        <img class='quote end' src='{{ asset('media/quote-end.svg')}}'>
+                    </div>
+                    
+                </div>
+                <h6 class='text_center p-2 text_intro'>Prochain conseil municipal : </h6>
+            </div>
+        </div>
+    </section>
+    <section>
+         <div>
+            <h4>L'univers ariégeois</h4>
+            <p>Liste des différents sites de la commune</p>
+        </div>
+        <div>
+            <h4>Maps </h4>
+            <p>Carte interactive </p>
+            <a href="#">Lien vers annuaire</a>
+        </div>
+    </section>
+       
+</div>
 {% endblock %}

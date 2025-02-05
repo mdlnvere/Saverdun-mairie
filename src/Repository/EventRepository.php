@@ -20,8 +20,8 @@ class EventRepository extends ServiceEntityRepository
     public function findByDate(string $date): array
     {
         $query = $this->createQueryBuilder('e')
-        ->where('e.date = :date')
-        ->orWhere('e.date > :date')
+        ->where('e.dateStart = :date')
+        ->orWhere('e.dateStart > :date')
         ->setParameter('date', $date);
 
         $q = $query->getQuery();

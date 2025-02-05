@@ -11,6 +11,7 @@
                 <th>Id</th>
                 <th>Name</th>
                 <th>Date</th>
+                <th>Date de fin</th>
                 <th>Description</th>
                 <th>Organizer</th>
                 <th>Place</th>
@@ -23,7 +24,8 @@
             <tr>
                 <td>{{ event.id }}</td>
                 <td>{{ event.name }}</td>
-                <td>{{ event.date ? event.date|date('Y-m-d') : '' }}</td>
+                <td>{{ event.dateStart ? event.dateStart|date('Y-m-d') : '' }}</td>
+                <td>{{ event.dateEnd ? event.dateEnd|date('Y-m-d') : '' }}</td>
                 <td>{{ event.description }}</td>
                 <td>{{ event.organizer }}</td>
                 <td>{{ event.place }}</td>

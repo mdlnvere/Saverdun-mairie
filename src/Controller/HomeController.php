@@ -166,7 +166,7 @@ final class HomeController extends AbstractController
         function getLastPosts(PostRepository $postRepository): array
         {
           $posts = array_reverse($postRepository->findAll());
-         return $posts = array_slice($posts,0, 3);
+         return $posts = array_slice($posts,0, 4);
         }
 
         function getFutureEvents(EventRepository $eventRepository): array
@@ -181,6 +181,7 @@ final class HomeController extends AbstractController
             'datas' => $apiService->getFranceData(),
             'weather' => setWeatherIcon(getWeatherIcon($apiService),isDayOrNight($apiService)),
             'posts' => getLastPosts($postRepository),
+            'postsMini' => array_slice(getLastPosts($postRepository), 1,4),
             'events' => getFutureEvents($eventRepository)
         ]);
     }

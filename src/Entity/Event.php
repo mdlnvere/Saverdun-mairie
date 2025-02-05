@@ -18,7 +18,11 @@ class Event
     private ?string $name = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
-    private ?\DateTimeInterface $date = null;
+    private ?\DateTimeInterface $dateStart = null;
+
+
+    #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
+    private ?\DateTimeInterface $dateEnd = null;
 
     #[ORM\Column(type: Types::TEXT)]
     private ?string $description = null;
@@ -49,14 +53,26 @@ class Event
         return $this;
     }
 
-    public function getDate(): ?\DateTimeInterface
+    public function getDateStart(): ?\DateTimeInterface
     {
-        return $this->date;
+        return $this->dateStart;
     }
 
-    public function setDate(\DateTimeInterface $date): static
+    public function setDateStart(\DateTimeInterface $dateStart): static
     {
-        $this->date = $date;
+        $this->dateStart = $dateStart;
+
+        return $this;
+    }
+
+    public function getDateEnd(): ?\DateTimeInterface
+    {
+        return $this->dateEnd;
+    }
+
+    public function setDateEnd(?\DateTimeInterface $dateEnd): static
+    {
+        $this->dateEnd = $dateEnd;
 
         return $this;
     }
