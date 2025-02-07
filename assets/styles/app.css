@@ -272,10 +272,15 @@ nav a:hover{
 
 /***************************** FOOTER *************************************/
 .footer{
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.82);
   color: white;
+  background-image: url('./media/castle-outline.svg');
+  background-position: right;
+  background-size: 26%;
+  background-repeat: no-repeat;
+  padding: 3% 3% 1% 3%;
+  
 }
-
 
 
 /**************** *WEATHER** **************************************/
@@ -425,6 +430,12 @@ nav a:hover{
 }
 
 
+.note2_white{
+  font-size: 0.8em;
+  color: #dddfe2;
+  justify-items: end;
+  margin: 0;
+}
 
 /*************************************** BUTTON *********************************************/
 /* From Uiverse.io by portseif */ 
@@ -550,6 +561,14 @@ button:hover:before {
   margin: 0;
 }
 
+.mention{
+  font-size: 0.7em;
+  letter-spacing: 1px;
+ 
+  padding: 1%;
+
+}
+
 .text_intro{
   padding: 2%;
   margin: 0;
@@ -581,9 +600,9 @@ button:hover:before {
 
 
 .qr{
-  display: none;
+
   width:150px; 
-  margin: 2%
+  margin: 0 2%;
 }
 
 
@@ -684,5 +703,13 @@ button:hover:before {
   border: rgb(228, 94, 94) 1.5px solid;
   display: inline-block;
   width: 20em;
+  
+}
+
+.underline{
+  background-color:red;
+  border: rgb(228, 94, 94) 1.5px solid;
+  display: inline-block;
+  width: 9em;
   
 }
