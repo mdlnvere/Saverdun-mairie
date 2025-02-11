@@ -7,4 +7,24 @@ import './bootstrap.js';
  */
 import './styles/app.css';
 
-console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
+const navLinkEls = document.querySelectorAll('.nav_link');
+const navItemEls = document.querySelectorAll('.nav_item');
+const sectionEls = document.querySelectorAll('.section');
+
+let currentSection = 'moveIn';
+window.addEventListener('scroll', () => {
+    sectionEls.forEach(sec => {
+        if(window.scrollY >= (sec.offsetTop - 50)) {
+            currentSection = sec.id
+        }
+    });
+
+    navLinkEls.forEach(navLink => {
+        if(navLink.href.includes(currentSection)){
+            navLink.parentElement.classList.add('active');
+        }
+        else{
+            navLink.parentElement.classList.remove("active")
+        }
+    })
+})

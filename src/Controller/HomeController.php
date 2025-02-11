@@ -2,13 +2,11 @@
 
 namespace App\Controller;
 
-use App\Entity\Post;
 use App\Repository\CounsilRepository;
 use App\Repository\EventRepository;
 use App\Repository\PostRepository;
 use App\Service\WeatherApiService;
 use DateTime;
-use Doctrine\ORM\EntityManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
@@ -178,10 +176,8 @@ final class HomeController extends AbstractController
 
         function getLastCounsil(CounsilRepository $counsilRepository)
         {
-          return $counsil = $counsilRepository->findLastOne();
+          return $counsilRepository->findLastOne();
         }
-
-       // dd($apiService->getFranceData());
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
             'datas' => $apiService->getFranceData(),
@@ -191,5 +187,12 @@ final class HomeController extends AbstractController
             'events' => getFutureEvents($eventRepository),
             'counsil' => getLastCounsil($counsilRepository)
         ]);
+    }
+
+
+    #[Route('/demarche', name: 'app_demarche')]
+    public function demarche(): Response
+    {
+      return $this->render('home/demarches.html.twig', []);
     }
 }

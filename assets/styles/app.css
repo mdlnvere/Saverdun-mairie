@@ -18,6 +18,11 @@ html, body{
     padding: 0%;
 }
 
+html{
+  --scroll-behavior: smooth;
+  scroll-behavior: smooth;
+}
+
 .special_char{
     font-family: 'handwritting';
     font-size: 5em;
@@ -32,6 +37,14 @@ html, body{
   color: white;
   text-align: end;
   margin: 10% 2%;
+}
+
+.title_section{
+  font-family: 'Title';
+  font-weight: 300;
+  font-size: 3em;
+  color: white;
+  margin:  5%;
 }
 
 
@@ -149,6 +162,18 @@ h4{
   margin: 0 5%;
 }
 
+.mc-10{
+  margin: 0 10%;
+}
+
+.mc-15{
+  margin: 0 15%;
+}
+
+.mc-20{
+  margin: 0 20%
+}
+
 .mc-2{
   margin: 0 2%;
 }
@@ -188,6 +213,10 @@ h4{
   padding: 2% 7%;
 }
 
+.mc10-mtb5{
+  margin: 5% 10%;
+}
+
 
 /************************************* HEADER **********************************/
 .wrapper{
@@ -200,6 +229,18 @@ h4{
     padding: 0%;
     display: flex;
     flex-direction: column;
+}
+
+.wrapperDemarche{
+  background-image: url("./media/Formalitesadministratives_1440_500.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 20em;
+  margin: 0%;
+  padding: 0%;
+  display: flex;
+  flex-direction: column;
 }
 
 
@@ -276,7 +317,7 @@ nav a:hover{
   color: white;
   background-image: url('./media/castle-outline.svg');
   background-position: right;
-  background-size: 26%;
+  background-size: 35%;
   background-repeat: no-repeat;
   padding: 3% 3% 1% 3%;
   
@@ -564,7 +605,6 @@ button:hover:before {
 .mention{
   font-size: 0.7em;
   letter-spacing: 1px;
- 
   padding: 1%;
 
 }
@@ -695,7 +735,7 @@ button:hover:before {
 
 
 
-/***************************************************************************************/
+/******************************************* LINE ***********************************************************/
 
 
 .line{
@@ -712,4 +752,54 @@ button:hover:before {
   display: inline-block;
   width: 9em;
   
+}
+
+
+
+/********************************************** ASIDE **************************************************************/
+.aside{
+  position: sticky;
+  top: 10%;
+  width: 20%;
+  height: 350px;
+  padding: 0%;
+}
+
+.aside ul{
+  display: flex;
+  flex-direction: column;
+  padding: 0%;
+  margin: 0%;
+  
+}
+
+.nav_list{
+  width: 100%;
+  transition: 0.4s;
+}
+
+.nav_list li{
+ padding: 15px;
+}
+
+.nav_list li:hover{
+  border-top: rgb(228, 94, 94) 1px solid;
+  border-bottom: rgb(228, 94, 94) 1px solid;
+  background-color: rgb(23, 22, 22);
+}
+
+.nav_link{
+  color: white;
+  margin: 15px;
+  padding: 15px
+}
+
+
+
+.active{
+  border-top: rgb(228, 94, 94) 1px solid;
+  border-bottom: rgb(228, 94, 94) 1px solid;
+  background-color: rgb(23, 22, 22);
+
+  transition: 0.1s;
 }
