@@ -2,7 +2,24 @@
 
 {% block title %}Saverdun - Accueil{% endblock %}
 
+
 {% block body %}
+<script>
+    function showSec(divid) {
+
+    var x = document.getElementById(divid);  
+    
+    if (x.style.display == "none") 
+    {
+      x.style.display = "flex";
+    } 
+    else {
+      x.style.display = "none";
+    }  
+  }
+
+</script>
+
 <style>
    
 </style>
@@ -15,7 +32,8 @@
         </header>
     </div>
     <div class='flex row'>
-        <aside class='aside special_sec flex'>
+        <aside class='aside  flex column'>
+            <h6>Un besoin en particulier ? </h6>
             <ul class='nav_list'>
                 <li class='nav_item'>
                     <a href='#moveIn' class='nav_link'>S'installer à Saverdun</a>
@@ -25,18 +43,50 @@
                 <li class='nav_item'><a href='#urban' class='nav_link'>Urbanisme</a></li>
                 <li class='nav_item'><a href='#asso' class='nav_link'>Association</a></li>
             </ul>
+             <button>Contacter la mairie</button>
         </aside>
         <div class='mc-5'>
+            <div>
+                <p class='under_title2 m-5'>24h/24, certaines démarches peuvent être faites en ligne : passeport, carte d'identité, inscription scolaire, mariage, PACS... </p>
+            </div>
+            <div style='text-align:center' class='m-2'>
+                <div class='line'></div>
+            </div>
              <section id='moveIn' class='news  section '>
                 <div>
-                    <h4>S'installer à Saverdun</h4>
+                    <h4 class='m-2'>S'installer à Saverdun</h4>
                     <div class="  posts p-5 ">
                         <div class="column">
-                            <p class="under_title2">La Regie Municipale d'Éléctricité (RME)</p>
-                            <p class="under_title2">La SMDEA (Société Mixte des Eaux et de l'Assainissement de l'Ariège)</p>
-                            <p class="under_title2">Demande d'aides sociales</p>
-                            <p class="under_title2">Inscription à un club sportif ou culturel</p>
-                            <p class="under_title2">Inscription à une mutuelle santé</p>
+                            <div class='buttonSec'>
+                                <button style='margin: 0' onclick="showSec('rme')">La Regie Municipale d'Éléctricité (RME)</button>
+                                <div id="rme" class ='none'>
+                                    <p>RME</p>
+                                </div>
+                            </div>
+                            <div class='buttonSec'>
+                                 <button style='margin: 0'   onclick="showSec('smdea')" >La SMDEA (Société Mixte des Eaux et de l'Assainissement de l'Ariège)</button>
+                                  <div id='smdea' class ='none'>
+                                    <p>SMDEA</p>
+                                </div>
+                            </div>
+                            <div class='buttonSec'>
+                                 <button style='margin: 0'  onclick="showSec('aide')" >Demande d'aides sociales</button>
+                                  <div id='aide' class ='none'>
+                                    <p>Aides</p>
+                                </div>
+                            </div>
+                            <div class='buttonSec'>
+                                 <button style='margin: 0'  onclick="showSec('club')" >Inscription à un club sportif ou culturel</button>
+                                  <div id='club' class ='none'>
+                                    <p>CLubs sportifs</p>
+                                </div>
+                            </div>
+                            <div class='buttonSec'>
+                                 <button  style='margin: 0'  onclick="showSec('health')" >Inscription à une mutuelle santé</button>
+                                  <div id='health' class ='none'>
+                                    <p>Mutuelle santé</p>
+                                </div>
+                            </div>
                         </div>    
     
                     </div>
@@ -45,31 +95,79 @@
             
             <section id='family' class='news section p-2'>
                 <div>
-                    <h4>Familles</h4>
+                    <h4 class='m-2'>Familles</h4>
                      <div class="  posts p-5 ">
                         <div class="column">
-                            <p class="under_title2">Relais Assistantes Maternelles (RAM)</p>
-                            <p class="under_title2">Les crèches</p>
-                            <p class="under_title2">Les écoles</p>
-                            <p class="under_title2">Espace jeunes</p>
-                            <p class="under_title2">Point Information Jeunesse (PIJ)</p>
-                            <p class="under_title2">Seniors</p>
+                            <div class='buttonSec'>
+                                <button style='margin: 0' onclick="showSec('ram')">Relais Assistantes Maternelles (RAM)</button>
+                                <div id="ram" class ='none'>
+                                    <p>RME</p>
+                                </div>
+                            </div>
+                            <div class='buttonSec'>
+                                 <button style='margin: 0'   onclick="showSec('creche')" >Les crèches</button>
+                                  <div id='creche' class ='none'>
+                                    <p>SMDEA</p>
+                                </div>
+                            </div>
+                            <div class='buttonSec'>
+                                 <button style='margin: 0'  onclick="showSec('ecole')" >Les écoles</button>
+                                  <div id='ecole' class ='none'>
+                                    <p>Aides</p>
+                                </div>
+                            </div>
+                            <div class='buttonSec'>
+                                 <button style='margin: 0'  onclick="showSec('jeune')" >Espace jeunes</button>
+                                  <div id='jeune' class ='none'>
+                                    <p>CLubs sportifs</p>
+                                </div>
+                            </div>
+                            <div class='buttonSec'>
+                                 <button  style='margin: 0'  onclick="showSec('pij')" >Point Information Jeunesse (PIJ)</button>
+                                  <div id='pij' class ='none'>
+                                    <p>Mutuelle santé</p>
+                                </div>
+                            </div>
+                             <div class='buttonSec'>
+                                 <button  style='margin: 0'  onclick="showSec('senior')" >Seniors</button>
+                                  <div id='senior' class ='none'>
+                                    <p>Mutuelle santé</p>
+                                </div>
+                            </div>
                         </div>    
-    
                     </div>
                 </div>
             </section>  
 
             <section id='citizen' class='news section p-2'>
                 <div>
-                    <h4>Citoyenneté</h4>
+                    <h4 class='m-2'>Citoyenneté</h4>
                      <div class="  posts p-5 ">
                         <div class="column">
-                            <p class="under_title2">Etat civil & titres d'identité</p>
-                            <p class="under_title2">Carte grise</p>
-                            <p class="under_title2">S'inscrire sur les listes électorales</p>
-                            <p class="under_title2">Maison France Services</p>
-                            <p class="under_title2"></p>
+                            <div class='buttonSec'>
+                                <button style='margin: 0' onclick="showSec('etat')">Etat civil & titres d'identité</button>
+                                <div id="etat" class ='none'>
+                                    <p>RME</p>
+                                </div>
+                            </div>
+                            <div class='buttonSec'>
+                                 <button style='margin: 0'   onclick="showSec('auto')" >Carte grise</button>
+                                  <div id='auto' class ='none'>
+                                    <p>SMDEA</p>
+                                </div>
+                            </div>
+                            <div class='buttonSec'>
+                                 <button style='margin: 0'  onclick="showSec('electeur')" >S'inscrire sur les listes électorales</button>
+                                  <div id='electeur' class ='none'>
+                                    <p>Aides</p>
+                                </div>
+                            </div>
+                            <div class='buttonSec'>
+                                 <button style='margin: 0'  onclick="showSec('maison')" >Maison France Services</button>
+                                  <div id='maison' class ='none'>
+                                    <p>CLubs sportifs</p>
+                                </div>
+                            </div>
                         </div>    
     
                     </div>
@@ -78,13 +176,33 @@
 
             <section id='urban' class='news section p-2'>
                 <div>
-                    <h4>Urbanisme</h4>
+                    <h4 class='m-2'>Urbanisme</h4>
                      <div class="  posts p-5 ">
                         <div class="column">
-                            <p class="under_title2">Plan local d'urbanisme</p>
-                            <p class="under_title2">Plan de prévention des risques naturels</p>
-                            <p class="under_title2">Travaux & aides aux travaux </p>
-                            <p class="under_title2">Louer son logement</p>
+                            <div class='buttonSec'>
+                                <button style='margin: 0' onclick="showSec('plu')">Plan local d'urbanisme</button>
+                                <div id="plu" class ='none'>
+                                    <p>RME</p>
+                                </div>
+                            </div>
+                            <div class='buttonSec'>
+                                 <button style='margin: 0'   onclick="showSec('prn')" >Plan de prévention des risques naturels</button>
+                                  <div id='prn' class ='none'>
+                                    <p>SMDEA</p>
+                                </div>
+                            </div>
+                            <div class='buttonSec'>
+                                 <button style='margin: 0'  onclick="showSec('travaux')" >Travaux & aides aux travaux </button>
+                                  <div id='travaux' class ='none'>
+                                    <p>Aides</p>
+                                </div>
+                            </div>
+                            <div class='buttonSec'>
+                                 <button style='margin: 0'  onclick="showSec('louer')" >Louer son logement</button>
+                                  <div id='louer' class ='none'>
+                                    <p>CLubs sportifs</p>
+                                </div>
+                            </div>
                         </div>    
     
                     </div>
@@ -93,14 +211,39 @@
 
             <section id='asso' class='news section p-2'>
                 <div>
-                    <h4>Association</h4>
+                    <h4 class='m-2'>Association</h4>
                      <div class="  posts p-5 ">
                         <div class="column">
-                            <p class="under_title2">Créer son association</p>
-                            <p class="under_title2">Se former en tant que bénévole Ariégeois</p>
-                            <p class="under_title2">Subventions</p>
-                            <p class="under_title2">Aides départementales</p>
-                            <p class="under_title2">Matériels de festivités à disposition (CCPAP)</p>
+                             <div class='buttonSec'>
+                                <button style='margin: 0' onclick="showSec('creerAsso')">Créer son association</button>
+                                <div id="creerAsso" class ='none'>
+                                    <p>RME</p>
+                                </div>
+                            </div>
+                            <div class='buttonSec'>
+                                 <button style='margin: 0'   onclick="showSec('benevole')" >Se former en tant que bénévole Ariégeois</button>
+                                  <div id='benevole' class ='none'>
+                                    <p>SMDEA</p>
+                                </div>
+                            </div>
+                            <div class='buttonSec'>
+                                 <button style='margin: 0'  onclick="showSec('subvention')" >Subventions </button>
+                                  <div id='subvention' class ='none'>
+                                    <p>Aides</p>
+                                </div>
+                            </div>
+                            <div class='buttonSec'>
+                                 <button style='margin: 0'  onclick="showSec('departem')" >Aides départementales</button>
+                                  <div id='departem' class ='none'>
+                                    <p>CLubs sportifs</p>
+                                </div>
+                            </div>
+                            <div class='buttonSec'>
+                                 <button style='margin: 0'  onclick="showSec('materiel')" >Matériels de festivités à disposition (CCPAP)</button>
+                                  <div id='materiel' class ='none'>
+                                    <p>CLubs sportifs</p>
+                                </div>
+                            </div>
                         </div>    
     
                     </div>
@@ -111,11 +254,6 @@
 
     </div>
         
-       
-
-    
-    <p>Lorem ipsum</p>
-
 </div>   
 
 {% endblock %}

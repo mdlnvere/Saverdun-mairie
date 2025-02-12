@@ -1,4 +1,3 @@
-import './bootstrap.js';
 /*
  * Welcome to your app's main JavaScript file!
  *
@@ -8,13 +7,12 @@ import './bootstrap.js';
 import './styles/app.css';
 
 const navLinkEls = document.querySelectorAll('.nav_link');
-const navItemEls = document.querySelectorAll('.nav_item');
 const sectionEls = document.querySelectorAll('.section');
 
 let currentSection = 'moveIn';
 window.addEventListener('scroll', () => {
     sectionEls.forEach(sec => {
-        if(window.scrollY >= (sec.offsetTop - 50)) {
+        if(window.scrollY >= (sec.offsetTop - 100)) {
             currentSection = sec.id
         }
     });
@@ -28,3 +26,35 @@ window.addEventListener('scroll', () => {
         }
     })
 })
+
+
+function myFunction(divid) {
+
+    var x = document.getElementById(divid);  
+    
+    if (x.style.display == "none") 
+    {
+      x.style.display = "block";
+    } 
+    else {
+      x.style.display = "none";
+    }  
+  }
+
+/**
+ * 
+ * document.addEventListener('click', () => {
+
+        if(button.lastElementChild.classList.contains("none")){
+            button.lastElementChild.classList.remove("none");
+        }
+        else{
+            button.lastElementChild.classList.add("none");
+        }
+
+    
+})
+
+
+
+ */
