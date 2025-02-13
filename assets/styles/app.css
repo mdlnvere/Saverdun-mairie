@@ -676,6 +676,10 @@ button:hover:before {
   border-bottom: #5f4c72 2px solid;
 }
 
+.foixHover{
+  border-top: #5f4c72 2px solid;
+  border-bottom: #5f4c72 2px solid;
+}
 
 .map .svgMapItem.svgMapItem--portes:hover {
   stroke:#e5c645;
@@ -683,6 +687,10 @@ button:hover:before {
 }
 
 .portes:hover{
+  border-top: #e5c645 2px solid;
+  border-bottom: #e5c645 2px solid;
+}
+.portesHover{
   border-top: #e5c645 2px solid;
   border-bottom: #e5c645 2px solid;
 }
@@ -695,12 +703,20 @@ button:hover:before {
   border-top: #519b46 2px solid;
   border-bottom: #519b46 2px solid;
 }
+.courseransHover{
+  border-top: #519b46 2px solid;
+  border-bottom: #519b46 2px solid;
+}
 
 .map .svgMapItem.svgMapItem--cathare:hover{
   stroke:#ccc42e;
 }
 
 .cathare:hover{
+  border-top: #ccc42e 2px solid;
+  border-bottom: #ccc42e 2px solid;
+}
+.cathareHover{
   border-top: #ccc42e 2px solid;
   border-bottom: #ccc42e 2px solid;
 }
@@ -713,12 +729,20 @@ button:hover:before {
   border-top: #e58f05 2px solid;
   border-bottom: #e58f05 2px solid;
 }
+.lezesHover{
+  border-top: #e58f05 2px solid;
+  border-bottom: #e58f05 2px solid;
+}
 
 .map .svgMapItem.svgMapItem--pyrenees:hover{
   stroke: #7db78b;
 }
 
 .pyrenees:hover{
+  border-top: #7db78b 2px solid;
+  border-bottom: #7db78b 2px solid;
+}
+.pyreneesHover{
   border-top: #7db78b 2px solid;
   border-bottom: #7db78b 2px solid;
 }
@@ -761,7 +785,7 @@ button:hover:before {
   position: sticky;
   top: 10%;
   left: 3%;
-  width: 25%;
+  width: 450px;
   height: 500px;
   padding: 0%;
 }
@@ -830,3 +854,6 @@ button:hover:before {
   display: none;
 }
 
+.buttonSec{
+  width: 45rem;
+}

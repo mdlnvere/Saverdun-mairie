@@ -5,18 +5,20 @@
 
 {% block body %}
 <script>
-    function showSec(divid) {
 
-    var x = document.getElementById(divid);  
-    
-    if (x.style.display == "none") 
-    {
-      x.style.display = "flex";
-    } 
-    else {
-      x.style.display = "none";
-    }  
-  }
+    function showSec(divid) {
+        var x = document.getElementById(divid);
+          
+        
+        if (x.style.display == "none") 
+        {
+        x.style.display = "flex";
+        } 
+        else {
+        x.style.display = "none";
+        }  
+    }
+
 
 </script>
 
@@ -59,32 +61,51 @@
                         <div class="column">
                             <div class='buttonSec'>
                                 <button style='margin: 0' onclick="showSec('rme')">La Regie Municipale d'Éléctricité (RME)</button>
-                                <div id="rme" class ='none'>
-                                    <p>RME</p>
+                                <div id="rme" style='display: none; align-items: end;' class='flex column' >
+                                    <p class=' mc-2 pc-2'>La RME est un service municipal qui assure la distribution de l'électricité sur la commune de Saverdun.<br>
+                                    Pour s'abonner à l'électricité à Saverdun, vous devez contacter la RME. 
+                                    Vous pouvez le faire par téléphone, par courrier ou sur le site internet de la Régie électrique du Moulin.</p>
+                                    <a href='#' style='width:15%; padding: 1%' class='counsil text_center m-2'>Les contacter</a>
                                 </div>
                             </div>
                             <div class='buttonSec'>
                                  <button style='margin: 0'   onclick="showSec('smdea')" >La SMDEA (Société Mixte des Eaux et de l'Assainissement de l'Ariège)</button>
-                                  <div id='smdea' class ='none'>
-                                    <p>SMDEA</p>
+                                  <div id='smdea' style='display: none; align-items: end;' class='flex column'>
+                                    <p  class=' mc-2 pc-2'>La SMDEA (Société Mixte des Eaux et de l'Assainissement de l'Ariège) est un syndicat intercommunal qui assure la distribution de l'eau potable et l'assainissement des eaux usées sur le territoire de l'Ariège.<br>
+                                        Pour s'abonner à l'eau à Saverdun, vous devez contacter la SMDEA.
+                                        Vous pouvez le faire par téléphone, par courrier ou sur le site internet de la SMDEA.
+                                    </p>
+                                    <a href='#' style='width:15%; padding: 1%' class='counsil text_center m-2'>Les contacter</a>
+
                                 </div>
                             </div>
                             <div class='buttonSec'>
                                  <button style='margin: 0'  onclick="showSec('aide')" >Demande d'aides sociales</button>
-                                  <div id='aide' class ='none'>
-                                    <p>Aides</p>
+                                  <div id='aide' style='display: none; align-items: end;' class='felx column' >
+                                    <p class=' mc-2 pc-2'>Si vous avez des difficultés financières, vous pouvez demander des aides sociales
+                                         auprès du CCAS, de la CAF, de la CPAM ou d'autres organismes sociaux.<br>
+                                        <br>Contacter le CCAS : 05 61 69 67 38
+                                    </p>
                                 </div>
                             </div>
                             <div class='buttonSec'>
                                  <button style='margin: 0'  onclick="showSec('club')" >Inscription à un club sportif ou culturel</button>
-                                  <div id='club' class ='none'>
-                                    <p>CLubs sportifs</p>
+                                  <div id='club' style='display: none; align-items: end;' class='flex column' >
+                                    <p class=' mc-2 pc-2'>Saverdun propose de nombreuses activités sportives et culturelles. <br>
+                                        Vous pouvez vous renseigner sur les différentes activités proposées auprès de la mairie 
+                                        ou des associations locales.
+                                    </p>
                                 </div>
                             </div>
                             <div class='buttonSec'>
                                  <button  style='margin: 0'  onclick="showSec('health')" >Inscription à une mutuelle santé</button>
-                                  <div id='health' class ='none'>
-                                    <p>Mutuelle santé</p>
+                                  <div id='health' style='display: none; align-items: end;' class='flex column'  >
+                                    <p class=' mc-2 pc-2'>Une mutuelle santé vous permet de bénéficier d'une couverture complémentaire à la Sécurité sociale.
+                                         Elle peut vous aider à financer les frais de santé non pris en charge par la Sécurité sociale, tels que les frais d'hospitalisation,
+                                          les frais de médicaments, les frais de dentiste, etc. <br>
+                                        Pour trouver une mutuelle santé adaptée à vos besoins, 
+                                        vous pouvez utiliser un comparateur de mutuelles en ligne.
+                                    </p>
                                 </div>
                             </div>
                         </div>    
@@ -100,38 +121,69 @@
                         <div class="column">
                             <div class='buttonSec'>
                                 <button style='margin: 0' onclick="showSec('ram')">Relais Assistantes Maternelles (RAM)</button>
-                                <div id="ram" class ='none'>
-                                    <p>RME</p>
+                                <div id="ram" style='display: none; align-items: end;' class='flex column' >
+                                    <p class=' mc-2 pc-2'>Le relais assistantes maternelles (RAM), est un service totalement gratuit qui est proposé aux parents 
+                                        employeurs et aux assistantes maternelles.<br>
+                                        Cette structure fonctionne avec une animatrice qualifiée, dont la mission est d’informer, 
+                                        conseiller et échanger avec les parents et les assistantes maternelles sur la thématique de la garde 
+                                        d'enfants. <br>
+                                        Le relais assistantes maternelles répertorie l’ensemble des offres et des demandes d’accueil en terme de garde d’enfants agréée.
+                                            <br>A l'heure actuel, on recense environ 3 000 RAM, gérés par les collectivités, comme la mairie, 
+                                            la communauté d’agglomération ou le centre d’action sociale, des associations ou des mutuelles.
+                                            <br><br>Ils sont financés en partie par la Caisse d'allocations familiales (CAF) ou la Mutualité sociale agricole (MSA).
+                                            <br>Le RAM propose également des ateliers éducatifs (ateliers de musique, activités manuelles, etc.). Ces activités constituent 
+                                            des temps d’éveil pour les enfants accompagnés de leur assistante maternelle.
+                                    </p>
+                                    <button >Télécharger le dossier d'inscription</button>
+                                     <a href='#' style='width:18%; padding: 1%' class='counsil text_center m-2'>En savoir plus</a>
                                 </div>
                             </div>
                             <div class='buttonSec'>
                                  <button style='margin: 0'   onclick="showSec('creche')" >Les crèches</button>
-                                  <div id='creche' class ='none'>
-                                    <p>SMDEA</p>
+                                  <div id='creche' style='display: none; ' class='flex column' >
+                                    <p class=' mc-2 pc-2'>La crèche familiale municipale
+                                        <br>La crèche collective privée "Les Couassous"
+                                    </p>
+                                    <a href='#' style='width:15%; padding: 1%; margin: 2% 5%' class='counsil text_center'>En savoir plus</a>
                                 </div>
                             </div>
                             <div class='buttonSec'>
                                  <button style='margin: 0'  onclick="showSec('ecole')" >Les écoles</button>
-                                  <div id='ecole' class ='none'>
-                                    <p>Aides</p>
+                                  <div id='ecole' style='display: none;' class='flex column' >
+                                    <p class=' mc-2 pc-2'>L'école maternelle : Charles Perrault
+                                        <br>Cours privé Sainte Thérèse
+                                        <br>L'école élémentaire - Groupe 2 : Pierre et Marie Curie
+                                        <br>L'école élémentaire - Groupe 3 : Pierre et Marie Curie
+                                    </p>
+                                    <a href='#' style='width:15%; padding: 1%; margin: 2% 5%' class='counsil text_center '>En savoir plus</a>
                                 </div>
                             </div>
                             <div class='buttonSec'>
                                  <button style='margin: 0'  onclick="showSec('jeune')" >Espace jeunes</button>
-                                  <div id='jeune' class ='none'>
-                                    <p>CLubs sportifs</p>
+                                  <div id='jeune' style='display: none; align-items: end;' class='flex column' >
+                                    <p class=' mc-2 pc-2'>L'Espace Jeunes de Saverdun accueille les jeunes de 12 à 26 ans, qu'ils soient collégiens, lycéens ou étudiants.
+                                        <br>C'est un lieu où ils peuvent se retrouver, s'amuser, s'informer et s'impliquer dans des projets variés.
+                                        <br>L'équipe d'animation les accompagne dans leurs envies, leurs besoins et leurs questions, en les aidant à développer leur autonomie, leur créativité, leur ouverture et leur solidarité.
+                                        <br>La prévention fait partie intégrante des actions menées.
+                                    </p>
+                                    <a href='#' style='width:15%; padding: 1%; margin: 2% 5%' class='counsil text_center'>En savoir plus</a>
                                 </div>
                             </div>
                             <div class='buttonSec'>
                                  <button  style='margin: 0'  onclick="showSec('pij')" >Point Information Jeunesse (PIJ)</button>
-                                  <div id='pij' class ='none'>
-                                    <p>Mutuelle santé</p>
+                                  <div id='pij' style='display: none; align-items: end;' class='flex column' >
+                                    <p class=' mc-2 pc-2'>Un espace labellisé par le ministère "Jeunesse et Sports" et par la région (label SPRO) qui dispense des informations sur tout ce qui touche la vie quotidienne. Il est aussi un lieu d’accompagnement de projets professionnels, de loisirs, d’orientation scolaire et de rédaction de CV et lettre de motivation.
+                                        <br>Pour plus d’informations sur le point information jeunesse, nous vous invitons à consulter le lien ci-dessous.
+                                        <br>Vous y trouverez les horaires, une plaquette informative et bien plus encore.
+                                    </p>
+                                    <a href='#' style='width:15%; padding: 1%; margin: 2% 5%' class='counsil text_center'>En savoir plus</a>
                                 </div>
                             </div>
                              <div class='buttonSec'>
                                  <button  style='margin: 0'  onclick="showSec('senior')" >Seniors</button>
-                                  <div id='senior' class ='none'>
-                                    <p>Mutuelle santé</p>
+                                  <div id='senior' style='display: none;' class='flex column'>
+                                    <button >Accéder au portail national pour les personnes agées</button>
+                                    <button >Accéder au site internet des EHPAD des Portes d'Ariège Pyrénées</button>
                                 </div>
                             </div>
                         </div>    
@@ -146,25 +198,25 @@
                         <div class="column">
                             <div class='buttonSec'>
                                 <button style='margin: 0' onclick="showSec('etat')">Etat civil & titres d'identité</button>
-                                <div id="etat" class ='none'>
+                                <div id="etat" style='display: none; align-items: end;' class='flex column' >
                                     <p>RME</p>
                                 </div>
                             </div>
                             <div class='buttonSec'>
                                  <button style='margin: 0'   onclick="showSec('auto')" >Carte grise</button>
-                                  <div id='auto' class ='none'>
+                                  <div id='auto' style='display: none; align-items: end;' class='flex column' >
                                     <p>SMDEA</p>
                                 </div>
                             </div>
                             <div class='buttonSec'>
                                  <button style='margin: 0'  onclick="showSec('electeur')" >S'inscrire sur les listes électorales</button>
-                                  <div id='electeur' class ='none'>
+                                  <div id='electeur' style='display: none; align-items: end;' class='flex column' >
                                     <p>Aides</p>
                                 </div>
                             </div>
                             <div class='buttonSec'>
                                  <button style='margin: 0'  onclick="showSec('maison')" >Maison France Services</button>
-                                  <div id='maison' class ='none'>
+                                  <div id='maison' style='display: none; align-items: end;' class='flex column' >
                                     <p>CLubs sportifs</p>
                                 </div>
                             </div>
@@ -181,25 +233,25 @@
                         <div class="column">
                             <div class='buttonSec'>
                                 <button style='margin: 0' onclick="showSec('plu')">Plan local d'urbanisme</button>
-                                <div id="plu" class ='none'>
+                                <div id="plu" style='display: none; align-items: end;' class='flex column' >
                                     <p>RME</p>
                                 </div>
                             </div>
                             <div class='buttonSec'>
                                  <button style='margin: 0'   onclick="showSec('prn')" >Plan de prévention des risques naturels</button>
-                                  <div id='prn' class ='none'>
+                                  <div id='prn' style='display: none; align-items: end;' class='flex column' >
                                     <p>SMDEA</p>
                                 </div>
                             </div>
                             <div class='buttonSec'>
                                  <button style='margin: 0'  onclick="showSec('travaux')" >Travaux & aides aux travaux </button>
-                                  <div id='travaux' class ='none'>
+                                  <div id='travaux' style='display: none; align-items: end;' class='flex column' >
                                     <p>Aides</p>
                                 </div>
                             </div>
                             <div class='buttonSec'>
                                  <button style='margin: 0'  onclick="showSec('louer')" >Louer son logement</button>
-                                  <div id='louer' class ='none'>
+                                  <div id='louer' style='display: none; align-items: end;' class='flex column'>
                                     <p>CLubs sportifs</p>
                                 </div>
                             </div>
@@ -216,31 +268,31 @@
                         <div class="column">
                              <div class='buttonSec'>
                                 <button style='margin: 0' onclick="showSec('creerAsso')">Créer son association</button>
-                                <div id="creerAsso" class ='none'>
+                                <div id="creerAsso" style='display: none; align-items: end;' class='flex column' >
                                     <p>RME</p>
                                 </div>
                             </div>
                             <div class='buttonSec'>
                                  <button style='margin: 0'   onclick="showSec('benevole')" >Se former en tant que bénévole Ariégeois</button>
-                                  <div id='benevole' class ='none'>
+                                  <div id='benevole' style='display: none; align-items: end;' class='flex column' >
                                     <p>SMDEA</p>
                                 </div>
                             </div>
                             <div class='buttonSec'>
                                  <button style='margin: 0'  onclick="showSec('subvention')" >Subventions </button>
-                                  <div id='subvention' class ='none'>
+                                  <div id='subvention' style='display: none; align-items: end;' class='flex column' >
                                     <p>Aides</p>
                                 </div>
                             </div>
                             <div class='buttonSec'>
                                  <button style='margin: 0'  onclick="showSec('departem')" >Aides départementales</button>
-                                  <div id='departem' class ='none'>
+                                  <div id='departem' style='display: none; align-items: end;' class='flex column' >
                                     <p>CLubs sportifs</p>
                                 </div>
                             </div>
                             <div class='buttonSec'>
                                  <button style='margin: 0'  onclick="showSec('materiel')" >Matériels de festivités à disposition (CCPAP)</button>
-                                  <div id='materiel' class ='none'>
+                                  <div id='materiel' style='display: none; align-items: end;' class='flex column' >
                                     <p>CLubs sportifs</p>
                                 </div>
                             </div>

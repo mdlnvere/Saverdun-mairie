@@ -26,35 +26,3 @@ window.addEventListener('scroll', () => {
         }
     })
 })
-
-
-function myFunction(divid) {
-
-    var x = document.getElementById(divid);  
-    
-    if (x.style.display == "none") 
-    {
-      x.style.display = "block";
-    } 
-    else {
-      x.style.display = "none";
-    }  
-  }
-
-/**
- * 
- * document.addEventListener('click', () => {
-
-        if(button.lastElementChild.classList.contains("none")){
-            button.lastElementChild.classList.remove("none");
-        }
-        else{
-            button.lastElementChild.classList.add("none");
-        }
-
-    
-})
-
-
-
- */
