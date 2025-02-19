@@ -1,41 +1,113 @@
-{% extends 'base.html.twig' %}
+{% extends 'navbar.html.twig' %}
 
-{% block title %}Post index{% endblock %}
+{% block title %}Mes posts{% endblock %}
 
 {% block body %}
-    <h1>Post index</h1>
+<body>
+<style>
+        body{
+            background-color:rgb(243, 243, 246);
+        }
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Date</th>
-                <th>Url</th>
-                <th>Description</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for post in posts %}
-            <tr>
-                <td>{{ post.id }}</td>
-                <td>{{ post.title }}</td>
-                <td>{{ post.date ? post.date|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ post.url }}</td>
-                <td>{{ post.description }}</td>
-                <td>
-                    <a href="{{ path('app_post_show', {'id': post.id}) }}">show</a>
-                    <a href="{{ path('app_post_edit', {'id': post.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="6">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+        h1{
+            font-family:  Calibri,sans-serif;
+            font-size: 2.5em;
+        }
+        h5{
+           font-family:  Calibri,sans-serif;
+           font-size: 1.5em;
+           
+           
+        }
 
-    <a href="{{ path('app_post_new') }}">Create new</a>
+        .see a{
+            background-color:  #5e63ff;
+            color: white;
+            display:flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            padding: 2%;
+           margin: 3px;
+           border-radius: 4px; 
+     
+        }
+
+        .edit a{
+            background-color: #222533;
+            color: white;
+            display:flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+           padding: 2%;
+           margin: 3px;
+           border-radius: 4px; 
+          
+        }
+     
+
+        
+
+</style>
+    <body>
+        <div class='m-2'>
+            <div class='p-2 w-80'>
+                <h1 class='m-5'>Mes posts </h1>
+            </div>
+            <div class=' m-5'>
+
+                <table >
+                    <thead>
+                        <tr>                  
+                            <th>Titre</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for post in posts %}
+                        <tr class='td'>
+                            <td>{{ post.title }}</td>
+                            <td>{{ post.date ? post.date|date('d-m-Y') : '' }}</td>
+                            <td>Status</td>
+                            <td>
+                                <div class='see'> 
+                                    <a href="{{ path('app_post_show', {'id': post.id}) }}">
+                                        <svg  aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                            <path stroke="currentColor" stroke-width="2" d="M21 12c0 1.2-4.03 6-9 6s-9-4.8-9-6c0-1.2 4.03-6 9-6s9 4.8 9 6Z"/>
+                                            <path stroke="currentColor" stroke-width="2" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <div class='edit'>
+                                    <a href="{{ path('app_post_edit', {'id': post.id}) }}">
+                                        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m14.304 4.844 2.852 2.852M7 7H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-4.5m2.409-9.91a2.017 2.017 0 0 1 0 2.853l-6.844 6.844L8 14l.713-3.565 6.844-6.844a2.015 2.015 0 0 1 2.852 0Z"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td colspan="6">Aucun posts</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                        <th scope="row" colspan="2">Nombre total de posts</th>
+                        <td colspan="2">XX</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+            <a href="{{ path('app_post_new') }}">Ajouter un nouveau</a>
+        </div>
+    </body>
+</body>
 {% endblock %}

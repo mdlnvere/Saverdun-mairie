@@ -46,6 +46,21 @@ html{
   color: white;
   margin:  5%;
 }
+.title_section{
+  font-family: 'Title';
+  font-weight: 300;
+  font-size: 3em;
+  color: white;
+  margin:  10% 5% 0 5%;
+}
+
+.title_under_section{
+  font-weight: 700;
+  font-size: 1.5em;
+  letter-spacing: 1.2px;
+  color: #fcfdfe;
+  
+}
 
 
 html{
@@ -158,6 +173,10 @@ h4{
   margin: 2% 0;;
 }
 
+.mbt-5{
+  margin: 5% 0;;
+}
+
 .mc-5{
   margin: 0 5%;
 }
@@ -216,6 +235,66 @@ h4{
 .mc10-mtb5{
   margin: 5% 10%;
 }
+
+table{
+  border-spacing: 0px 1rem;
+
+
+  overflow:hidden ;
+}
+
+thead th:nth-child(1) {
+  width: 30%;
+}
+
+thead th:nth-child(2) {
+  width: 25%;
+}
+
+thead th:nth-child(3) {
+  width: 35%;
+}
+
+thead th:nth-child(4) {
+  width: 25%;
+}
+
+table tr:last-child, table tr:first-child{
+  border-radius: 0.5rem;
+} 
+
+th{
+  text-align: center;
+}
+
+th,
+td {
+  padding: 15px;
+  margin: 15px;
+
+}
+.td{
+  background-color:   white;
+  border-spacing: 3px;
+  border-radius: 8px;
+  text-align: center;
+
+
+
+}
+
+td:first-child,
+th:first-child {
+  border-radius: 10px 0 0 10px;
+}
+
+
+td:last-child,
+th:last-child {
+  border-radius: 0 10px 10px 0;
+}
+
+
 
 
 /************************************* HEADER **********************************/
@@ -679,6 +758,7 @@ button:hover:before {
 .foixHover{
   border-top: #5f4c72 2px solid;
   border-bottom: #5f4c72 2px solid;
+  stroke: #5f4c72;
 }
 
 .map .svgMapItem.svgMapItem--portes:hover {
@@ -693,6 +773,7 @@ button:hover:before {
 .portesHover{
   border-top: #e5c645 2px solid;
   border-bottom: #e5c645 2px solid;
+  stroke:#e5c645;
 }
 
 .map .svgMapItem.svgMapItem--couserans:hover{
@@ -706,6 +787,7 @@ button:hover:before {
 .courseransHover{
   border-top: #519b46 2px solid;
   border-bottom: #519b46 2px solid;
+  stroke:  #519b46;
 }
 
 .map .svgMapItem.svgMapItem--cathare:hover{
@@ -719,6 +801,7 @@ button:hover:before {
 .cathareHover{
   border-top: #ccc42e 2px solid;
   border-bottom: #ccc42e 2px solid;
+  stroke:#ccc42e;
 }
 
 .map .svgMapItem.svgMapItem--leze:hover{
@@ -728,10 +811,12 @@ button:hover:before {
 .lezes:hover{
   border-top: #e58f05 2px solid;
   border-bottom: #e58f05 2px solid;
+  
 }
 .lezesHover{
   border-top: #e58f05 2px solid;
   border-bottom: #e58f05 2px solid;
+  stroke: #e58f05;
 }
 
 .map .svgMapItem.svgMapItem--pyrenees:hover{
@@ -745,6 +830,7 @@ button:hover:before {
 .pyreneesHover{
   border-top: #7db78b 2px solid;
   border-bottom: #7db78b 2px solid;
+  stroke: #7db78b;
 }
 
 /*********************************************** SAVERDUN MAP *********************************************/
@@ -857,3 +943,27 @@ button:hover:before {
 .buttonSec{
   width: 45rem;
 }
+
+.text-link{
+  color:rgb(228, 94, 94);
+  font-weight: 500;
+}
+
+
+
+
+/****************************************************** ADMIN ***************************************************/
+.cardA{
+  border-radius: 9px;
+  background-color: #fefdfb;
+  display: flex;
+  flex-direction: column;
+  padding: 2%;
+}
+
+.h5_admin{
+  font-size: 1.2em;
+}
+
+
+

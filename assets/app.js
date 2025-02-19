@@ -8,6 +8,7 @@ import './styles/app.css';
 
 const navLinkEls = document.querySelectorAll('.nav_link');
 const sectionEls = document.querySelectorAll('.section');
+const toggleButton = document.getElementById("toggle-btn");
 
 let currentSection = 'moveIn';
 window.addEventListener('scroll', () => {
@@ -26,3 +27,4 @@ window.addEventListener('scroll', () => {
         }
     })
 })
+

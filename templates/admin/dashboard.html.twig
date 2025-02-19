@@ -1,0 +1,195 @@
+{% extends 'navbar.html.twig' %}
+
+
+
+{% block body %}
+    <style>
+       
+
+        h1{
+            font-family:  Calibri,sans-serif;
+            font-size: 2.5em;
+        }
+        h5{
+           font-family:  Calibri,sans-serif;
+           font-size: 1.5em;
+           
+           
+        }
+
+
+        .notification {
+            display: flex;
+            flex-direction: column;
+            isolation: isolate;
+            position: relative;
+            width: 18rem;
+            height: 8rem;
+            background: #29292c;
+            border-radius: 1rem;
+            overflow: hidden;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 16px;
+            --gradient: linear-gradient(to bottom, #2eadff, #5e63ff, #7e61ff);
+            --color:   #e6e6ef;
+        }
+
+            .notification:before {
+                position: absolute;
+                content: "";
+                inset: 0.0625rem;
+                border-radius: 0.9375rem;
+                background: #18181b;
+                z-index: 2
+            }
+
+            .notification:after {
+                position: absolute;
+                content: "";
+                width: 0.25rem;
+                inset: 0.65rem auto 0.65rem 0.5rem;
+                border-radius: 0.125rem;
+                background: var(--gradient);
+                transition: transform 300ms ease;
+                z-index: 4;
+            }
+
+            .notification:hover:after {
+                transform: translateX(0.15rem)
+            }
+
+            .notititle {
+                color: var(--color);
+                padding: 0.65rem 0.25rem 0.4rem 1.25rem;
+                font-weight: 500;
+                font-size: 1.1rem;
+                transition: transform 300ms ease;
+                z-index: 5;
+            }
+
+            .notification:hover .notititle {
+                transform: translateX(0.15rem)
+            }
+
+            .notibody {
+                color: #99999d;
+                padding: 0 1.25rem;
+                transition: transform 300ms ease;
+                z-index: 5;
+            }
+
+            .notification:hover .notibody {
+                transform: translateX(0.25rem)
+            }
+
+            .notiglow,
+            .notiborderglow {
+                position: absolute;
+                width: 20rem;
+                height: 20rem;
+                transform: translate(-50%, -50%);
+                background: radial-gradient(circle closest-side at center, white, transparent);
+                opacity: 0;
+                transition: opacity 300ms ease;
+            }
+
+            .notiglow {
+                z-index: 3;
+            }
+
+            .notiborderglow {
+                z-index: 1;
+            }
+
+            .notification:hover .notiglow {
+                opacity: 0.1
+            }
+
+            .notification:hover .notiborderglow {
+                opacity: 0.1
+            }
+
+            .note {
+                color: var(--color);
+                position: fixed;
+                top: 80%;
+                left: 50%;
+                transform: translateX(-50%);
+                text-align: center;
+                font-size: 0.9rem;
+                width: 75%;
+            }
+        
+            .button {
+                padding: 15px 20px;
+                border: none;
+                outline: none;
+                background-color:#18181b;
+                color: #eee;
+                border-radius: 7px;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                font-weight: 600;
+                cursor: pointer;
+                transition: all 0.25s ease-out;
+            }
+
+            .button:hover {
+                transform: translateY(-3px);
+                background-color: #29292c;
+            }
+
+            .button-span {
+                color: #aaa;
+            }
+
+
+    </style>
+    <body>
+        <div>
+            <h1 class="text_center m-5">Bienvenue</h1>
+            <div class='row center m-2'>
+                <a class="m-2" href="{{path('app_post_index')}}">
+                    <div class="notification ">
+                            <div class="notiglow"></div>
+                            <div class="notiborderglow"></div>
+                            <div class="notititle">Mes publications</div>
+                            <div class="notibody">X publications en ligne</div>
+                            <div class="notibody">X publications en cours de rédaction</div>
+                    </div>
+                </a>
+                <a class="m-2" href="{{path('app_event_index')}}">
+                    <div class="notification">
+                        <div class="notiglow"></div>
+                        <div class="notiborderglow"></div>
+                        <div class="notititle">Mes évènements</div>
+                        <div class="notibody">X évènements en ligne</div>
+                        <div class="notibody">X évènements en cours de rédaction</div>
+                        <div class="notibody">X demandes d'ajout</div>
+                    </div>
+                </a>
+                <a class="m-2" href="{{path('app_counsil_index')}}">
+                    <div class="notification ">
+                        <div class="notiglow"></div>
+                        <div class="notiborderglow"></div>
+                        <div class="notititle">Mes conseils municipaux</div>
+                        <div class="notibody">X conseils municipaux </div>
+                    </div>
+                </a>
+
+            </div>
+
+            <h5 class="m-5 pc-2">Accès rapides</h5>
+            <div class="row mc-5">
+                <button class="button ">
+                        INFO EN DIRECT 
+                        <span class="button-span"> ─ Ajouter une nouvelle notification</span>
+                </button>
+                <button class="button ">
+                        HORAIRES
+                        <span class="button-span"> ─ Changer les informations</span>
+                </button>
+            </div>
+        <div>
+    </body>
+
+{% endblock %}
