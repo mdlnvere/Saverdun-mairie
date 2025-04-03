@@ -1,38 +1,52 @@
-{% extends 'base.html.twig' %}
+{% extends 'navbar.html.twig' %}
 
 {% block title %}Post{% endblock %}
 
 {% block body %}
-    <h1>Post</h1>
+<style>
+     body{
+            background-color:rgb(243, 243, 246);
+        }
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ post.id }}</td>
-            </tr>
-            <tr>
-                <th>Title</th>
-                <td>{{ post.title }}</td>
-            </tr>
-            <tr>
-                <th>Date</th>
-                <td>{{ post.date ? post.date|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-            <tr>
-                <th>Url</th>
-                <td>{{ post.url }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ post.description }}</td>
-            </tr>
-        </tbody>
-    </table>
+    .preview{
+        width: 50%;
+    }
 
-    <a href="{{ path('app_post_index') }}">back to list</a>
+</style>
+<body>
+    <div class="m-2">
+        <h1>Post</h1>
 
-    <a href="{{ path('app_post_edit', {'id': post.id}) }}">edit</a>
+        <table class="table">
+            <tbody>
+                
+                <tr>
+                    <th>Titre</th>
+                    <td>{{ post.title }}</td>
+                </tr>
+                <tr>
+                    <th>Date</th>
+                    <td>{{ post.date ? post.date|date('Y-m-d H:i:s') : '' }}</td>
+                </tr>
+                {% if post.url %}
+                <tr>
+                    <th>Image de couverture</th>
+                    <td><img class="preview" src="{{ asset(post.url) }}"></td>
+                </tr>
+                {% endif %}
+                <tr>
+                    <th>Contenu</th>
+                    <td>{{ post.description }}</td>
+                </tr>
+            </tbody>
+        </table>
 
-    {{ include('post/_delete_form.html.twig') }}
+        <a href="{{ path('app_post_index') }}">back to list</a>
+
+        <a href="{{ path('app_post_edit', {'id': post.id}) }}">edit</a>
+
+        {{ include('post/_delete_form.html.twig') }}
+    </div>
+
+</body>
 {% endblock %}

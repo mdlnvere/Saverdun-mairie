@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\PostRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use phpDocumentor\Reflection\Types\Boolean;
 
 #[ORM\Entity(repositoryClass: PostRepository::class)]
 class Post
@@ -25,6 +26,11 @@ class Post
 
     #[ORM\Column(type: Types::TEXT)]
     private ?string $description = null;
+
+    #[ORM\Column]
+    private ?bool $finished = null;
+
+ 
 
     public function getId(): ?int
     {
@@ -75,6 +81,18 @@ class Post
     public function setDescription(string $description): static
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    public function isFinished(): ?bool
+    {
+        return $this->finished;
+    }
+
+    public function setFinished(bool $finished): static
+    {
+        $this->finished = $finished;
 
         return $this;
     }

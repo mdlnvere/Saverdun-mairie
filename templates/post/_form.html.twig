@@ -1,4 +1,19 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
+     <div >
+        <div class="formField">
+        
+            {{ form_widget(form.title, { 'attr': {'class': 'bigForm'} }) }} 
+           <span> {{ form_label(form.title) }} </span>
+        </div>
+        <div  >
+            {{ form_row(form.date) }}
+        </div>
+        <div >
+            {{ form_row(form.url) }}
+        </div>
+        <div >
+            {{ form_row(form.description) }}
+        </div>
+    </div>
     <button class="btn">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}

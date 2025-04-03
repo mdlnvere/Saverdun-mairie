@@ -1,0 +1,285 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Saverdun - Accueil{% endblock %}
+
+
+{% block body %}
+<script>
+
+    function showSec(divid) {
+        var x = document.getElementById(divid);
+          
+        
+        if (x.style.display == "none") 
+        {
+        x.style.display = "flex";
+        } 
+        else {
+        x.style.display = "none";
+        }  
+    }
+
+
+</script>
+
+<style>
+   
+</style>
+
+<div class="body">
+    <div class="wrapperVivre">
+        <header style="padding : 5% 5% 2% 5%">
+            <h1 class='title_section mc-5'>Vivre ensemble à Saverdun</h1>
+            <h2 class='title_under_section mc-5'>Appréciez le quotidien de notre village</2>
+        </header>
+
+        <ul class='section_quick mc-5'>
+            <li><img class='logo m-5' src='{{ asset('media/sports.svg') }}'><a href="{{ path('app_demarche')}}">Sport et santé dans ma ville</a></li>
+            <li><img class='icon m-5' src='{{ asset('media/family.svg') }}'><a href="#">Sortir à Saverdun</a></li>
+            <li><img class='icon m-5' src='{{ asset('media/partenariat.svg') }}'><a href="#">Voir toutes les associations</a></li>
+        </ul>
+        
+
+    </div>
+   
+ <div  class='flex row mbt-5'>
+        <aside class='aside  flex column'>
+            <ul class='nav_list'>
+                <li class='nav_item'>
+                    <a href='#culture' class='nav_link'>Culture</a>
+                </li>
+                <li class='nav_item'><a href='#sport' class='nav_link'>Sport</a></li>
+                <li class='nav_item'><a href='#asso' class='nav_link'>Associations</a></li>
+                <li class='nav_item'><a href='#enfance' class='nav_link'>Jeunesse</a></li>
+                <li class='nav_item'><a href='#sante' class='nav_link'>Social</a></li>
+                <li class='nav_item'><a href='#stationnement' class='nav_link'>Transports</a></li>
+            </ul>
+        </aside>
+        <div class='mc-5'>
+            <div>
+                <p class='under_title2 m-5'>Découvrez notre ville, trouvez des idées d'activités, des conseils pratiques et préparez-vous à vivre une expérience inoubliable. Explorez nos itinéraires, dénichez des trésors cachés et laissez-vous guider par notre patrimoine riche et captivant.</p>
+            </div>
+            <div style='text-align:center' class='m-2'>
+                <div class='line'></div>
+            </div>
+             <section id='culture' class='news  section '>
+                <div>
+                    <h4 class='m-2'>Culture</h4>
+                    <div class="  posts p-5 ">
+                        <div class="column">
+                            <div class='buttonSec'>
+                                <button style='margin: 0'>Politique culturelle de la ville </button>
+                                <div  class='flex column' >
+                                    <p class=' mc-2 pc-2'>Depuis plusieurs années la commune de Saverdun mène et développe sur son territoire une politique culturelle dont le but est de rendre la culture accessible au plus grand nombre. La commune a mis en place plusieurs services et équipements culturels avec un intérêt particulier donné à l’art contemporain. De nombreuses associations culturelles (théâtre, peinture, danse, arts plastiques) contribuent au rayonnement culturel de la ville, c’est pourquoi la municipalité souhaite leur apporter le soutien nécessaire au développement de leur activité..
+                                        L’objectif de la commune est de désacraliser les lieux de culture et que 
+                                        chaque habitant s’approprie l’offre. L’idée est également de maintenir 
+                                        l’offre en cœur de ville afin de créer des déambulations culturelles 
+                                        entre les différents sites..
+                                    </p>                    
+                                </div>
+                            </div>
+                            <div class="row m-2">
+                                <img class="w-45 m-2" src='{{ asset('media/MIMA.jpg')}}'>
+                                <div class="m-2">
+                                    <button>Voir Le centre culturel (cinéma/médiathèque/ Musée Micro-Folie)</button>
+                                    <button> Voir Les soirées culturelles d'un brin de sens</button>
+                                    <button>Voir L'hôtel des arts  et les ateliers DLKC</button>
+                                    <button>Voir Le musée fugace </button>
+                                </div>
+                            </div>
+                            
+                        </div>        
+                    </div>
+                   
+                </div>
+            </section>   
+            
+            <section id='sport' class='news section p-2'>
+                <div>
+                    <h4 class='m-2'>Sport</h4>
+                     <div class="  posts p-5 ">
+                        <div class="column">
+                            <div class='buttonSec'>
+                                <button style='margin: 0'>Associations sportives</button>
+                                <div class='flex column'>
+                                    <p class=' mc-2 pc-2'>Plongez dans le monde sportif de notre ville ! Des clubs dynamiques proposent 
+                                        une diversité d'activités, allant du rugby au taekwondo en passant par le poker 
+                                        ou encore la pétanque. Rejoignez-nous pour partager l'enthousiasme du sport 
+                                        et tisser des liens au cœur de notre communauté !
+                                    </p>
+                                    <div class="row m-2">
+                                        <img class="m-2"style="height: 300px" src='{{ asset('media/piscine.jpg')}}'>
+                                        <div class="m-2">
+                                            <button>Voir Toutes les associations sportives</button>
+                                            <button> Voir La piscine municipale</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>    
+                    </div>
+                </div>
+            </section>  
+
+            <section id='asso' class='news section p-2'>
+                <div>
+                    <h4 class='m-2'>Association</h4>
+                    <div class="  posts p-5 ">
+                        <div class="column">
+                            <button style='margin: 0'>Engagez vous à Saverdun</button>
+                                <div class='flex column'>
+                                    <p class=' mc-2 pc-2'>Des clubs sportifs aux organisations culturelles, 
+                                        notre ville regorge d'opportunités pour tous les goûts et toutes les 
+                                        passions.
+                                        Les amateurs de sports trouveront leur bonheur parmi nos clubs de rugby, 
+                                        de danse et bien plus encore.
+                                        Pour les esprits créatifs, des ateliers artistiques, des clubs de théâtre et de musique offrent
+                                         des espaces d'expression uniques.
+                                        Les associations caritatives œuvrent également activement pour le bien-être de notre communauté. 
+                                        Rejoignez-les pour apporter votre contribution à des causes nobles et solidaires.
+                                        Explorez, participez et faites partie de l'énergie positive qui anime nos associations !
+                                    </p>
+                                     <div class="row m-2">
+                                        <img class="m-2" style="width: 50%" src='{{ asset('media/association.jpg')}}'>
+                                        <div class="m-2">
+                                            <button>Voir Toutes les démarches </button>
+                                            <button> Télécharger le guide</button>
+                                        </div>
+                                    </div>
+                                </div>                           
+                        </div>    
+    
+                    </div>
+                </div>
+            </section>  
+
+            <section id='enfance' class='news section p-2'>
+                <div>
+                    <h4 class='m-2'>Scolarité, Enfance et Jeunesse</h4>
+                     <div class="  posts p-5 ">
+                        <div class="column">
+                            <div class='buttonSec'>
+                                 <p class=' mc-2 pc-2'>
+                                    La ville de Saverdun propose un service jeunesse à destination des 
+                                    adolescents et des jeunes adultes, scolarisés à partir du collège, puis du 
+                                    lycée ou autre.
+                                    Le Projet Jeunesse participe à l’épanouissement des jeunes, concourt à leur
+                                     permettre de se divertir, contribue à leur apprentissage puis à leur 
+                                     investissement dans la vie sociale et dans l’exercice de leur citoyenneté 
+                                     en leur permettant de s’informer, de s’exprimer, de prendre part au débat 
+                                     et de s’engager.
+                                </p>
+                                <div class="m-2">
+                                    <button>En savoir plus</button>
+                                </div>
+                                 <img class="w-80 m-5" src='{{ asset('media/tiny.jpg')}}'>
+                                <p class=' mc-2 pc-2'>Le Relais Assistantes Maternelles de la CCPAP est 
+                                    à votre disposition gratuitement pour vous renseigner et vous accompagner 
+                                    dans vos démarches.  
+                                    Plusieurs modes de garde s'offrent à vous :  
+                                </p>
+                                <ul>
+                                    <li>Les assistantes maternelles agréées</li>
+                                    <li>La crèche familiale municipale</li>
+                                    <li>La crèche collective privée "Les Couassous" </li>
+                                </ul>
+                                <div class="m-2">
+                                    <button>Voir Toutes les modes de garde</button>
+                                    <button> Voir les écoles</button>
+
+                                </div>
+
+                               
+                            
+                            </div>                  
+                        </div>    
+    
+                    </div>
+                </div>
+            </section>   
+
+            <section id='sante' class='news section p-2'>
+                <div>
+                    <h4 class='m-2'>Santé et social</h4>
+                    <div class="  posts p-5 ">
+                        <div class="column">
+                            <button style='margin: 0'>Don du sang et premiers secours</button>
+                                <div class='flex column'>
+                                    <p class=' mc-2 pc-2'>
+                                    Les premiers secours, une compétence indispensable qui peut être la clé pour préserver des vies en cas d'urgence.
+                                    Que vous soyez confronté à une situation d'urgence à la maison, au travail ou dans la vie quotidienne, savoir comment réagir rapidement et efficacement peut sauver des vies.<br><br>
+                                    Le don de sang est un geste simple et généreux qui
+                                     permet de soigner plus d'un million
+                                        de personnes en France chaque année.
+                                        Aucun médicament ne peut remplacer le sang humain. La générosité des donneurs
+                                        de sang est donc indispensable toute l’année.
+                                        Secours d’urgence, interventions chirurgicales, maladies du sang, cancers... Les
+                                        besoins en produits sanguins sont quotidiens : 1 000 dons sont nécessaires, chaque
+                                        jour, en région Occitanie pour répondre aux besoins des malades.
+                                        Dans ce contexte, 4 collectes sont organisées, chaque année, dans la commune de
+                                        Saverdun.
+                                        Chaque don compte ! 1 don = 1 heure = 3 vies sauvées !
+                                        Pour en savoir plus sur le don de sang et sur les prochaines dates de collecte,
+                                        rendez-vous sur : dondesang.efs.sante.fr
+                                    </p>
+                                    <button>VOIR tous les professionnels de santé </button>
+                                     
+                                    
+                                        <div class="m-2">
+                                            <button>CLIC Canton de Saverdun</button>
+                                            <p class=' mc-2 pc-2'>
+                                                En septembre 2017, le CLIC du canton de Saverdun ouvre un nouvel atelier mémoire qui s'adresse principalement à un public fragile (troubles cognitifs avérés).
+                                                Maithé BRU, animatrice diplômée agrée par la CARSAT, propose des exercices qui permettent de renouer de façon ludique avec la mémoire visuelle, immédiate, associative...
+                                                <br>
+                                                Participer à cette activité permet d'entretenir les facultés cérébrales, voire de les accroître et de favoriser l'équilibre psychologique. Le groupe sera formé de 10 personnes maximum.
+                                                Celui-ci se déroulera à partir du 18 septembre 2017 tous les lundis de 10h à 11h30 durant 12 séances de 1h30 à la Communauté Des Communes une fois par semaine : 36 euros pour les personnes imposables 16 euros pour les personnes non imposable.
+                                                <br>
+                                                Renseignements et inscriptions au 05 61 67 84 43 auprès des coordinatrices du CLIC.
+                                            </p>
+                                        </div>
+                                </div>                           
+                        </div>    
+    
+                    </div>
+                </div>
+            </section> 
+            <section id='stationnement' class='news section p-2'>
+                <div>
+                    <h4 class='m-2'>Transports et Stationnement</h4>
+                      <div class="  posts p-5 ">
+                        <div class="column">
+                            <button style='margin: 0'>La navette spéciale </button>
+                                <div class='flex column'>
+                                     <img class="m-5 w-80"  src='{{ asset('media/navette.jpg')}}'>
+                                    <p class=' mc-2 pc-2'>C'est un transport urbain gratuit mis à la disposition
+                                        des habitants de Saverdun par le Centre Communal d'Action Sociale de la 
+                                        Mairie.
+                                        La Navette dessert le centre ville, les quartiers, les zones commerciales
+                                         et la gare, afin de faciliter vos déplacements.
+                                    </p>
+                                    <button>Télécharger les horaires</button>  
+                                    <div class="m-2">
+                                        <button>Covoiturage Illicov</button>
+                                        <p class=' mc-2 pc-2'>
+                                            La Communauté de communes des Portes d'Ariège Pyrénées (CCPAP) a 
+                                            fait appel à illicov pour expérimenter des lignes de covoiturage 
+                                            pour les trajets réguliers.
+                                            Rendez-vous sur illicov.fr pour indiquer vos lieux de rendez-vous
+                                            préférés.
+                                        </p>
+
+                                    </div>
+                                    <button>Voir tous les stationnements</button>
+                                </div>                           
+                        </div>    
+    
+                    </div>
+                </div>
+            </section> 
+        
+        </div>
+
+    </div>
+</div>   
+
+{% endblock %}

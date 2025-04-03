@@ -195,4 +195,10 @@ final class HomeController extends AbstractController
     {
       return $this->render('home/demarches.html.twig', []);
     }
+
+    #[Route('/vivre', name: 'app_vivre')]
+    public function vivre(): Response
+    {
+      return $this->render('home/vivre.html.twig', []);
+    }
 }

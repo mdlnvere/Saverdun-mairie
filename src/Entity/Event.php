@@ -36,6 +36,9 @@ class Event
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $url = null;
 
+    #[ORM\Column]
+    private ?bool $finished = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -121,6 +124,18 @@ class Event
     public function setUrl(?string $url): static
     {
         $this->url = $url;
+
+        return $this;
+    }
+
+    public function isFinished(): ?bool
+    {
+        return $this->finished;
+    }
+
+    public function setFinished(bool $finished): static
+    {
+        $this->finished = $finished;
 
         return $this;
     }
