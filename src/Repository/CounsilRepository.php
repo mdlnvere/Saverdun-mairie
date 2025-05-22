@@ -41,7 +41,7 @@ class CounsilRepository extends ServiceEntityRepository
     //        ;
     //    }
 
-        public function findLastOne(): Counsil
+        public function findLastOne(): ?Counsil
         {
             return $this->createQueryBuilder('c')
             ->orderBy('c.id', 'DESC')

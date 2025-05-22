@@ -48,7 +48,7 @@
                     <img class="post_pic" src="{{ asset(posts.0.url) }}" alt="image liée" >
                     {% endif %}
                     
-                    <p>{{ posts.0.description}}</p>
+                    <p>{{ posts.0.description|slice(0, 150) ~ '...' }}</p>
 
                     <button class="button">En savoir plus </button>
                 </div>     
